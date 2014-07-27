@@ -1,0 +1,8 @@
+doctype html
+html
+  head
+    title Welcome to Slm.
+  body
+    p Slm is slim like template system for node.
+    br
+    = partial('footer');
