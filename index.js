@@ -8,9 +8,10 @@ var serverOptions = {
     basePath: __dirname,
     path: './views',
     compileOptions: {
-      basePath: __dirname + '/views'
+      basePath: __dirname + '/views',
+      useCache: false
     },
-    isCached: true
+    isCached: false
   }
 }
 
