@@ -1,0 +1,7 @@
+doctype html
+html
+  head
+    = content('head')
+  body
+    = content()
+    = content('footer')
