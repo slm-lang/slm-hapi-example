@@ -1,27 +1,25 @@
 var Hapi = require('hapi');
 
-var serverOptions = {
-  views: {
-    engines: {
-      'slm': require('slm')
-    },
-    basePath: __dirname,
-    path: './views',
-    compileOptions: {
-      basePath: __dirname + '/views',
-      useCache: false
-    },
-    isCached: false
-  }
-}
+var server = new Hapi.Server(3000);
 
-var server = new Hapi.Server(3000, serverOptions);
+server.views({
+  engines: {
+    'slm': require('slm')
+  },
+  basePath: __dirname,
+  path: './views',
+  compileOptions: {
+    basePath: __dirname + '/views',
+    useCache: false
+  },
+  isCached: false
+})
 
 server.route({
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-        reply.view('index', {hello: "word"});
+      reply.view('index', {hello: "word"});
     }
 });
 
