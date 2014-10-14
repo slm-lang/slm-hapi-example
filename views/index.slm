@@ -6,5 +6,8 @@
 body
   p Slm is slim like template system for node.
 
+  markdown:
+    **This** is *markdown* support!
+
 = content('footer')
   = partial('footer');

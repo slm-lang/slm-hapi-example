@@ -1,10 +1,14 @@
 var Hapi = require('hapi');
+var Slm = require('slm');
+var Markdown = require('slm-markdown');
 
 var server = new Hapi.Server(3000);
 
+Markdown.register(Slm.template);
+
 server.views({
   engines: {
-    'slm': require('slm')
+    'slm': Slm
   },
   basePath: __dirname,
   path: './views',
